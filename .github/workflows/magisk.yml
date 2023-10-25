@@ -74,8 +74,6 @@ jobs:
         id: set-matrix
         uses: actions/github-script@v6
         with:
-          node-version: ''
-          node-version-file: ''
           script: |
             let matrix = {};
             let arch = "${{ github.event.inputs.arch }}"
