@@ -73,6 +73,8 @@ jobs:
       - name: Generate build matrix
         id: set-matrix
         uses: actions/github-script@v6
+      - name: Use local github-script@v20
+        uses: ./.github/actions/github-script@v20
         with:
           script: |
             let matrix = {};
