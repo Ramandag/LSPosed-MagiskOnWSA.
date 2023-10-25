@@ -72,7 +72,7 @@ jobs:
     steps:
       - name: Generate build matrix
         id: set-matrix
-        uses: actions/github-script@v20
+        uses: actions/github-script@main
         with:
           script: |
             let matrix = {};
