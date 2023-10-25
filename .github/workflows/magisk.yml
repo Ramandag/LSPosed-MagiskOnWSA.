@@ -89,26 +89,6 @@ jobs:
                 break;
             }
             core.setOutput("matrix",JSON.stringify(matrix));
-
-      - name: Use local github-script
-        uses: ./.github/actions/github-script@v20
-        with:
-          script: |
-            let matrix = {};
-            let arch = "${{ github.event.inputs.arch }}"
-            switch ( arch ) {
-              case "x64":
-                matrix.arch = ["x64"];
-                break;
-              case "arm64":
-                matrix.arch = ["arm64"];
-                break;
-              default:
-                matrix.arch = ["x64", "arm64"];
-                break;
-            }
-            core.setOutput("matrix",JSON.stringify(matrix));
-
   build:
     runs-on: ubuntu-20.04
     needs: matrix
