@@ -89,6 +89,8 @@ jobs:
                 break;
             }
             core.setOutput("matrix",JSON.stringify(matrix));
+            using: 'node20'
+            main: 'main.js'
   build:
     runs-on: ubuntu-20.04
     needs: matrix
